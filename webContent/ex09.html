@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>자바스크립트</h1>
+	<h2>함수(function)</h2>
+	<script type="text/javascript">
+		//이름 있는 함수(기명함수, 선언적 함수)
+		//정의
+		function testA() {
+			console.log("testA");
+		}
+		//실행 함수이름()
+		testA();
+		
+		
+		//이름이 없는 함수(익명함수) ->이름이 없으면 사용할 수 없다, 정의와 동시에 사용, 변수에 할당해서 변수이름으로 사용
+		var testB = function() {
+			console.log("익명함수 입니다.");
+		}
+		//변수에 function이 대입되고 난 후에 사용해야함 (순서중요)
+		testB();
+	</script>
+	
+</body>
+</html>
