@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>자바스크립트</h1>
+	<h2>함수(function)</h2>
+	<script type="text/javascript">
+
+		/*
+		var name = "global"; //전역변수
+		
+		function checkscope() {
+			var name = "local"; //지역변수
+			console.log(name);
+		}
+		checkscope();
+		console.log(name);
+		*/	
+		
+		//실험2
+		var name = "global";
+
+		//정의
+		function checkScope(){
+			name = "local"; //전역변수에 name으로 사용됨
+			name2 = "로컬";  //전역변수로 선언됨
+		}
+
+		checkScope();
+
+		console.log(name);  //-->global 출력  (local)
+		console.log(name2); //-->에러         (로컬) 
+	</script>
+	
+</body>
+</html>
