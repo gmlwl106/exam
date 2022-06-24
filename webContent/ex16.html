@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>자바스크립트</h1>
+	<h2>객체</h2>
+	<h3>배열+객체->리스트</h3>
+	
+	<script type="text/javascript">
+		var personlist = [];
+		
+		var person01 = {
+				name: "박희지",
+				hp: "010-1111"
+		};
+		
+		var person02 = {};
+		person02.name = "박깜이";
+		person02.hp = "010-2222";
+		
+		var person03 = {
+			name: "박박박"
+		};
+		person03.hp = "010-333";
+		
+		console.log(person01);
+		console.log(person02);
+		console.log(person03);
+		
+		personlist[0] = person01;
+		personlist[1] = person02;
+		personlist.push(person03);
+		
+		for(var i=0; i<personlist.length; i++) {
+			console.log(personlist[i].name);
+		}
+		
+	</script>
+	
+</body>
+</html>
