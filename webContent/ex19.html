@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style>
+		#textarea {height:50px; width:400px; font-size:20px;}
+		button {height:100%; width:100%;}
+		
+	</style>
+</head>
+<body>
+	<input id="textarea" type="text">
+	
+	<table width="400px" height="200px">
+		<tr>
+			<td><button id="7" type="button">7</button></td>
+			<td><button id="8" type="button">8</button></td>
+			<td><button id="9" type="button">9</button></td>
+			<td><button id="divide" type="button" value="/">/</button></td>
+		</tr>
+		<tr>
+			<td><button id="4" type="button">4</button></td>
+			<td><button id="5" type="button">5</button></td>
+			<td><button id="6" type="button">6</button></td>
+			<td><button id="multiply" type="button" value="*">*</button></td>
+		</tr>
+		<tr>
+			<td><button id="1" type="button">1</button></td>
+			<td><button id="2" type="button">2</button></td>
+			<td><button id="3" type="button">3</button></td>
+			<td><button id="minus" type="button" value="-">-</button></td>
+		</tr>
+		<tr>
+			<td><button id="0" type="button">0</button></td>
+			<td><button id="c" type="button" value="c">C</button></td>
+			<td><button id="equal" type="button" value="=">=</button></td>
+			<td><button id="plus" type="button" value="+">+</button></td>
+		</tr>
+	</table>
+	
+</body>
+
+<script type="text/javascript">
+window.onload = function() {
+	var num0 = document.getElementById("0");
+	var num1 = document.getElementById("1");
+	var num2 = document.getElementById("2");
+	var num3 = document.getElementById("3");
+	var num4 = document.getElementById("4");
+	var num5 = document.getElementById("5");
+	var num6 = document.getElementById("6");
+	var num7 = document.getElementById("7");
+	var num8 = document.getElementById("8");
+	var num9 = document.getElementById("9");
+	
+	
+	var divide = document.getElementById("divide");
+	var multiply = document.getElementById("multiply");
+	var minus = document.getElementById("minus");
+	var plus = document.getElementById("plus");
+	
+	var c = document.getElementById("c");
+	var equal = document.getElementById("equal");
+
+	var textarea = document.getElementById("textarea");
+	
+	
+	//숫자 이외의 버튼 클릭 했을 때
+	var operator = "";
+	
+	divide.onclick = function() {
+		//나누기
+		operator = "/";
+		textarea.value += operator;
+	};
+	multiply.onclick = function() {
+		//곱하기
+		operator = "*";
+		textarea.value += operator;
+	};
+	minus.onclick = function() {
+		//빼기
+		operator = "-";
+		textarea.value += operator;
+	};
+	plus.onclick = function() {
+		//더하기
+		operator = "+";
+		textarea.value += operator;
+	};
+	c.onclick = function() {
+		textarea.value = null;
+	};
+	
+	
+	//결과 계산
+	var result = 0;
+	equal.onclick = function() {
+		var formula = textarea.value.split(operator);
+		
+		var leftNum = parseInt(formula[0]);
+		var rightNum = parseInt(formula[1]);
+		
+		switch(operator) {
+			case "+" :
+				result = leftNum + rightNum;
+				break;
+			case "-" :
+				result = leftNum - rightNum;
+				break;
+			case "*" :
+				result = leftNum * rightNum;
+				break;
+			case "/" :
+				result = leftNum / rightNum;
+				break;
+			default :
+				textarea.value = "*error*";
+				break;
+		}
+		textarea.value = result;
+	};
+	
+	//숫자 버튼 클릭했을 때
+	num0.onclick = function() {
+		textarea.value += 0;
+	};
+	num1.onclick = function() {
+		textarea.value += 1;
+	};
+	num2.onclick = function() {
+		textarea.value += 2;
+	};
+	num3.onclick = function() {
+		textarea.value += 3;
+	};
+	num4.onclick = function() {
+		textarea.value += 4;
+	};
+	num5.onclick = function() {
+		textarea.value += 5;
+	};
+	num6.onclick = function() {
+		textarea.value += 6;
+	};
+	num7.onclick = function() {
+		textarea.value += 7;
+	};
+	num8.onclick = function() {
+		textarea.value += 8;
+	};
+	num9.onclick = function() {
+		textarea.value += 9;
+	};
+
+};
+</script>
+</html>
