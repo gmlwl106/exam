@@ -43,61 +43,45 @@
 
 <script type="text/javascript">
 window.onload = function() {
-	var num0 = document.getElementById("0");
-	var num1 = document.getElementById("1");
-	var num2 = document.getElementById("2");
-	var num3 = document.getElementById("3");
-	var num4 = document.getElementById("4");
-	var num5 = document.getElementById("5");
-	var num6 = document.getElementById("6");
-	var num7 = document.getElementById("7");
-	var num8 = document.getElementById("8");
-	var num9 = document.getElementById("9");
 	
-	
-	var divide = document.getElementById("divide");
-	var multiply = document.getElementById("multiply");
-	var minus = document.getElementById("minus");
-	var plus = document.getElementById("plus");
-	
-	var c = document.getElementById("c");
-	var equal = document.getElementById("equal");
-
 	var textarea = document.getElementById("textarea");
 	
 	
 	//숫자 이외의 버튼 클릭 했을 때
 	var operator = "";
-	
-	divide.onclick = function() {
-		//나누기
+	//나누기
+	document.getElementById("divide").onclick = function() {
 		operator = "/";
 		textarea.value += operator;
 	};
-	multiply.onclick = function() {
-		//곱하기
+	//곱하기
+	document.getElementById("multiply").onclick = function() {
 		operator = "*";
 		textarea.value += operator;
 	};
-	minus.onclick = function() {
-		//빼기
+	//빼기
+	document.getElementById("minus").onclick = function() {
 		operator = "-";
 		textarea.value += operator;
 	};
-	plus.onclick = function() {
-		//더하기
+	//더하기
+	document.getElementById("plus").onclick = function() {
 		operator = "+";
 		textarea.value += operator;
 	};
-	c.onclick = function() {
+	//리셋
+	document.getElementById("c").onclick = function() {
 		textarea.value = null;
+		operator = "";
 	};
 	
 	
 	//결과 계산
-	var result = 0;
-	equal.onclick = function() {
+	document.getElementById("equal").onclick = function() {
+		var result = 0;
 		var formula = textarea.value.split(operator);
+		console.log(formula);
+		console.log(operator);
 		
 		var leftNum = parseInt(formula[0]);
 		var rightNum = parseInt(formula[1]);
@@ -116,41 +100,41 @@ window.onload = function() {
 				result = leftNum / rightNum;
 				break;
 			default :
-				textarea.value = "*error*";
+				result = "[ERROR]";
 				break;
 		}
 		textarea.value = result;
 	};
 	
 	//숫자 버튼 클릭했을 때
-	num0.onclick = function() {
+	document.getElementById("0").onclick = function() {
 		textarea.value += 0;
 	};
-	num1.onclick = function() {
+	document.getElementById("1").onclick = function() {
 		textarea.value += 1;
 	};
-	num2.onclick = function() {
+	document.getElementById("2").onclick = function() {
 		textarea.value += 2;
 	};
-	num3.onclick = function() {
+	document.getElementById("3").onclick = function() {
 		textarea.value += 3;
 	};
-	num4.onclick = function() {
+	document.getElementById("4").onclick = function() {
 		textarea.value += 4;
 	};
-	num5.onclick = function() {
+	document.getElementById("5").onclick = function() {
 		textarea.value += 5;
 	};
-	num6.onclick = function() {
+	document.getElementById("6").onclick = function() {
 		textarea.value += 6;
 	};
-	num7.onclick = function() {
+	document.getElementById("7").onclick = function() {
 		textarea.value += 7;
 	};
-	num8.onclick = function() {
+	document.getElementById("8").onclick = function() {
 		textarea.value += 8;
 	};
-	num9.onclick = function() {
+	document.getElementById("9").onclick = function() {
 		textarea.value += 9;
 	};
 
