@@ -5,8 +5,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<input id="num1" type="text"> + <input id="num2" type="text"><br>
-	<button id="btn" type="button">더하기</button>
+	<input class="red" id="num1" type="text"> + <input id="num2" type="text"><br>
+	<button class="red" id="btn" type="button">더하기</button>
 	
 	<p id="result">결과</p>
 	
@@ -14,6 +14,20 @@
 
 <script type="text/javascript">
 window.onload = function() {
+	
+	var btn = document.getElementsByTagName("button"); //태그네임
+	console.log(btn);
+	
+	var inputs = document.getElementsByTagName("input"); //태그네임
+	console.log(inputs);
+	console.log(inputs[0]);
+	console.log(inputs[1])
+
+	var tags = document.getElementsByClassName("red"); //클래스네임
+	console.log(tags);
+	console.log(tags[0]);
+	console.log(tags[1]);
+	
 	var testButton = document.getElementById("btn");
 	var num1 = document.getElementById("num1");
 	var num2 = document.getElementById("num2");
